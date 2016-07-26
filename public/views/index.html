@@ -1,0 +1,23 @@
+<!-- remove button does not work -->
+<!DOCTYPE html>
+<html ng-app="groceryApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Grocery List</title>
+    <script src = "vendors/angular/angular.min.js"></script>
+    <script src = "scripts/client.js"></script>
+  </head>
+  <body ng-controller="MainController as main">
+    Enter Item:<input type="text" ng-model="main.groceryItem">
+    Enter Quanity:<input type="number" ng-model="main.numOfItems">
+    <button ng-click="main.submitItem()">Save</button>
+    <ul>
+      <li ng-repeat="item in main.list">{{item.item}}  {{item.quanity}}
+      <button ng-click="main.update(item)">update</button>
+      <button ng-click="main.remove(item)">remove</button>
+    </li>
+    </ul>
+    <br>Enter updated Item:<input type="text" ng-model="main.newItem">
+    <br>Enter updated Quanity:<input type="number" ng-model="main.newQuanity">
+  </body>
+</html>
